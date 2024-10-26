@@ -7,6 +7,7 @@ class MyDrawer extends StatelessWidget {
     final _auth = AuthService();
     _auth.signOut();
   }
+
   const MyDrawer({super.key});
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,8 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: ListTile(
-                  title:const  Text('H O M E'),
-                  leading:const  Icon(Icons.home),
+                  title: const Text('H O M E'),
+                  leading: const Icon(Icons.home),
                   onTap: () {
                     Navigator.pop(context);
                   },
@@ -39,11 +40,14 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: ListTile(
-                  title:const  Text('S E T T I N G S'),
-                  leading:const  Icon(Icons.settings),
+                  title: const Text('S E T T I N G S'),
+                  leading: const Icon(Icons.settings),
                   onTap: () {
-                     Navigator.pop(context);
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingScreen()));
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SettingScreen()));
                   },
                 ),
               ),
@@ -51,10 +55,10 @@ class MyDrawer extends StatelessWidget {
           ),
           // logout list tile
           Padding(
-            padding: const EdgeInsets.only(left: 25,bottom: 25),
+            padding: const EdgeInsets.only(left: 25, bottom: 25),
             child: ListTile(
-              title:const  Text('L O G O U T'),
-              leading:const  Icon(Icons.logout),
+              title: const Text('L O G O U T'),
+              leading: const Icon(Icons.logout),
               onTap: () {
                 logout();
               },

@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: Text("Home"),
       ),
@@ -66,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 MaterialPageRoute(
                   builder: (context) => ChatScreen(
                     recieverEmail: userData['email'],
+                    recieverId: userData['uid'],
                   ),
                 ));
           });
