@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_chat/Auth/auth_service.dart';
+import 'package:my_chat/Services/Auth/auth_service.dart';
 import 'package:my_chat/Widgets/my_button.dart';
 import 'package:my_chat/Widgets/my_textfield.dart';
 
@@ -8,10 +8,8 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final void Function()? onTap;
-
   LoginScreen({super.key, required this.onTap});
   // tap to go to register page
-
   void login(BuildContext context) async {
     final authService = AuthService();
     // try login
@@ -27,7 +25,6 @@ class LoginScreen extends StatelessWidget {
               ));
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

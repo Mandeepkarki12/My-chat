@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_chat/Services/Auth/auth_service.dart';
 import 'package:my_chat/Widgets/my_button.dart';
 import 'package:my_chat/Widgets/my_textfield.dart';
 
@@ -6,10 +7,34 @@ class RegisterScreen extends StatelessWidget {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _confirmPassword = TextEditingController();
- final void Function()? onTap;
+  final void Function()? onTap;
 
   RegisterScreen({super.key, required this.onTap});
-  register() {}
+  void register(BuildContext context) {
+    // get auth service
+    final _auth = AuthService();
+    // password matches then create a user
+    if (_password.text == _confirmPassword.text) {
+      try {
+        _auth.signUpWithEmailPassword(_email.text, _password.text);
+      } catch (e) {
+        showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+                  title: Text(e.toString()),
+                ));
+      }
+    }
+    // password doesn't matches then
+    else {
+      showDialog(
+          context: context,
+          builder: (context) => const AlertDialog(
+                title: Text('Password doesnt matches'),
+              ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +95,7 @@ class RegisterScreen extends StatelessWidget {
             // login button
             MyButton(
               text: "Register",
-              onTap: register,
+              onTap: ()=>register(context),
             ),
             const SizedBox(
               height: 25,
