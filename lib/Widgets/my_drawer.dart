@@ -28,7 +28,7 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: ListTile(
-                  title: const Text('H O M E'),
+                  title:  Text('H O M E', style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
                   leading: const Icon(Icons.home),
                   onTap: () {
                     Navigator.pop(context);
@@ -40,7 +40,7 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: ListTile(
-                  title: const Text('S E T T I N G S'),
+                  title:  Text('S E T T I N G S',style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
                   leading: const Icon(Icons.settings),
                   onTap: () {
                     Navigator.pop(context);
@@ -57,7 +57,7 @@ class MyDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25, bottom: 25),
             child: ListTile(
-              title: const Text('L O G O U T'),
+              title:  Text('L O G O U T',style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
               leading: const Icon(Icons.logout),
               onTap: () {
                 logout();

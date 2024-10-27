@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class UserTile extends StatelessWidget {
   final String text;
   final void Function()? onTap;
-  const UserTile({super.key, required this.text, required this.onTap});
+   final TextStyle? textStyle;
+  const UserTile({super.key, required this.text, required this.onTap, this.textStyle});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +20,7 @@ class UserTile extends StatelessWidget {
             // Icon
            const  Icon(Icons.person),
            const SizedBox(width: 20,),
-            Text(text),
+            Text(text, style: textStyle,),
           ],
         ),
       ),

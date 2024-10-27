@@ -22,9 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text(
+          "Home",
+          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+        ),
       ),
-      drawer: MyDrawer(),
+      drawer:const  MyDrawer(),
       body: _buildUserList(),
     );
   }
@@ -61,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (userData["email"] != _authService.getCurrentUser()!.email) {
       return UserTile(
           text: userData['email'],
+          textStyle: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
           onTap: () {
             Navigator.push(
                 context,

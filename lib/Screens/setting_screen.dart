@@ -7,11 +7,10 @@ class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: Text('Settings'),
+        title: Text('Settings', style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -23,7 +22,7 @@ class SettingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // dark mode
-            Text('Dark Mode'),
+            Text('Dark Mode', style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
 
             // switch toggle
 

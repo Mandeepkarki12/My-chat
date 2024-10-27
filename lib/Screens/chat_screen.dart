@@ -78,7 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: Text(widget.recieverEmail),
+        title: Text(widget.recieverEmail, style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
       ),
       body: Column(
         children: [
@@ -145,7 +145,7 @@ class _ChatScreenState extends State<ChatScreen> {
   // build message input
   Widget _buildMessageInput() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
+      padding: const EdgeInsets.only(bottom: 20, top: 20),
       child: Row(
         children: [
           Expanded(
